@@ -340,6 +340,8 @@ class APP(QDialog):
         else:
             with open(self.path, 'r', encoding='U8') as _file:
                 data : dict = json.load(_file)
+                # 必须把植物添加到列表
+                plants_list : list = data['objects'][0]['objdata']['p']
                 _file.close()
                 data['objects'][0]['objdata']['g'] = diamond
                 data['objects'][0]['objdata']['c'] = gold
@@ -362,13 +364,19 @@ class APP(QDialog):
                             data['objects'][0]['objdata']['plis'][each_plantN]['l'] = choose_a_plantl
                             data['objects'][0]['objdata']['plis'][each_plantN]['m'] = choose_a_plantm
                             data['objects'][0]['objdata']['plis'][each_plantN]['x'] = choose_a_plantp
+                            plants_list.append(each_plantN)
+                            plants_list = list(set(plants_list))
+                            data['objects'][0]['objdata']['p'] = plants_list
                             break
                 elif n == 1:
                     for each_plant in self.plantData:
                         each_plantN = self.plantData.index(each_plant)
+                        plants_list.append(each_plantN)
+                        plants_list = list(set(plants_list))
                         data['objects'][0]['objdata']['plis'][each_plantN]['l'] = all_plantsl
                         data['objects'][0]['objdata']['plis'][each_plantN]['m'] = all_plantsm
                         data['objects'][0]['objdata']['plis'][each_plantN]['x'] = all_plantsp
+                    data['objects'][0]['objdata']['p'] = plants_list
                 else:
                     pass
                 print(data)
