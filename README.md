@@ -2,7 +2,7 @@
 For more insteresting games and good memory,not by spending money!
 
 ## Here is a tutotrial that can help with U.
-Link : https://youtube.com/playlist?list=PL8-0iW_M110DYafIYsnL23At76dwippq0
+Link :  https://www.youtube.com/watch?v=glMNqob-ZBY&list=PL8-0iW_M110DYafIYsnL23At76dwippq0&index=1&t=21s
 
 
 ## About PVZ2Tool App in the mp4
